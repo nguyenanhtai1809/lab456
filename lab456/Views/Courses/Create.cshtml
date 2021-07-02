@@ -7,6 +7,7 @@
 
     @using (Html.BeginForm("Create", "Courses"))
     {
+        @Html.AntiForgeryToken()
     <div class="form-group">
         @Html.LabelFor(m => m.Place)
         @Html.TextBoxFor(m => m.Place, new { @class = "form-control" })
@@ -32,6 +33,12 @@
     <div class="form-group"></div>
     <div class="form-group"></div>
     <div class="form-group"></div>
-    <button type="submit" value="Save" class="btn btn-primary">Lưu kết quả</button>}
+    <button type="submit" value="Save" class="btn btn-primary">Lưu kết quả</button>
+       
+    }
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval");
+    }
 
 
