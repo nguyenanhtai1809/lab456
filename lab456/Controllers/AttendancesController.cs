@@ -1,29 +1,25 @@
-﻿using System;
+﻿using lab456.Models;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
-using System.Web.Mvc;
-using System.Web.Optimization;
-using System.Web.Routing;
-using System.Data.Entity;
-using lab456.Models;
-using Microsoft.AspNet.Identity;
-
 
 namespace lab456.Controllers
 {
-   
-    [System.Web.Http.Authorize]
+    [Authorize]
     public class AttendancesController : ApiController
-    {
+    
+         {
         private ApplicationDbContext _dbContext;
         public AttendancesController()
         {
             _dbContext = new ApplicationDbContext();
 
         }
-      [System.Web.Http.HttpPost]
+       [HttpPost]
         public IHttpActionResult Attend([FromBody] int courseId)
         {
             var attendance = new Attendance
@@ -37,4 +33,3 @@ namespace lab456.Controllers
         }
     }
 }
-
