@@ -14,7 +14,7 @@ using Microsoft.AspNet.Identity;
 namespace lab456.Controllers
 {
    
- 
+    [System.Web.Http.Authorize]
     public class AttendancesController : ApiController
     {
         private ApplicationDbContext _dbContext;
@@ -23,7 +23,7 @@ namespace lab456.Controllers
             _dbContext = new ApplicationDbContext();
 
         }
-      
+      [System.Web.Http.HttpPost]
         public IHttpActionResult Attend([FromBody] int courseId)
         {
             var attendance = new Attendance

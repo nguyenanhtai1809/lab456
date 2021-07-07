@@ -19,5 +19,4 @@ namespace lab456.Models
         [Column(Order = 2)]
         public string AttendeeId { get; set; }
     }
-    
 }
