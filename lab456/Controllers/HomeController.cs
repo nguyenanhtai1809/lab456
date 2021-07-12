@@ -16,8 +16,6 @@ namespace lab456.Controllers
     {
 
         private ApplicationDbContext _dbContext;
-        private IEnumerable<taiCourse> upcommingCourses;
-
         public HomeController()
         {
             _dbContext = new ApplicationDbContext();
@@ -33,7 +31,7 @@ namespace lab456.Controllers
 
             var viewModel = new CoursesViewModel
             {
-                UpcommingCourses = upcommingCourses,
+                UpcomingCourses = upcomingCoures,
                 ShowAction = User.Identity.IsAuthenticated
             };
             return View(viewModel);
