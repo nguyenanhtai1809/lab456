@@ -15,6 +15,34 @@
 .dl-horizontal dt {
     white-space: normal;
 }
+.navbar-inverse {
+    background-color: #00ff90;
+    border-color: #080808;
+}
+
+
+.course {
+    list-style: none;
+}
+
+.course > li {
+ position: relative;
+ margin-bottom: 30px;
+}
+
+.course > li .date {
+ text-align: center;
+ background-color: #ff0000;
+ color: white;
+ width: 60px;
+border-radius: 8px;
+}
+
+.course > li .details {
+    position: absolute;
+   top: 0;
+  left: 70px;
+}
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
@@ -24,27 +52,7 @@ textarea {
 }
 
 
-.course {
-    list-style  :none;
-}
-.course > li{
-    position:relative;
-    margin-bottom:30px;
-}
-.course >li.date{
-    text-align :center;
-    background-color: #00ffff;
-    color:white;
-    width:60px;
-    border-radius:8px;
 
-}
-
-.course >li.details {
-    position:absolute;
-    top: 0;
-    left :70px;
-}
 
 
 

@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using lab456.ViewModels;
+using System.Web.Http;
 
 namespace lab456.Controllers
 {
@@ -12,8 +14,10 @@ namespace lab456.Controllers
 
     public class HomeController : Controller
     {
-        
+
         private ApplicationDbContext _dbContext;
+        private IEnumerable<taiCourse> upcommingCourses;
+
         public HomeController()
         {
             _dbContext = new ApplicationDbContext();
@@ -25,9 +29,15 @@ namespace lab456.Controllers
                .Include(c => c.Lecturer)
                .Include(c => c.Category)
                .Where(c => c.DateTime > DateTime.Now);
-            return View(upcomingCoures);
+
+
+            var viewModel = new CoursesViewModel
+            {
+                UpcommingCourses = upcommingCourses,
+                ShowAction = User.Identity.IsAuthenticated
+            };
+            return View(viewModel);
         }
-     
 
         public ActionResult About()
         {

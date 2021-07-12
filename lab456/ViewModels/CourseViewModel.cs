@@ -8,6 +8,9 @@ using System.Web;
 namespace lab456.ViewModels
 {
     public class CourseViewModel
+   
+  
+   
     {
         [Required]
         public string Place { get; set; }
@@ -25,6 +28,7 @@ namespace lab456.ViewModels
         {
             return DateTime.Parse(string.Format("{0} {1}", Date, Time));
         }
+
     }
 }
 
